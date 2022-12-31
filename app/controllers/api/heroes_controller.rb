@@ -14,7 +14,7 @@ class Api::HeroesController < ApplicationController
   def create
     @hero = Hero.new(hero_params)
     if @hero.save
-      render json: @hero, status: :created, location: api_hero_url(@hero)
+      render json: @hero, status: :created
     else
       render json: @hero.errors, status: :unprocessable_entity
     end
